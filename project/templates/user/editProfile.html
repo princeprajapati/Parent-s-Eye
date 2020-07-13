@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Parent's Eye</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/metismenu.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../../static/adminResources/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body class="bg-accpunt-pages">
+
+<!-- HOME -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="wrapper-page">
+
+                    <div class="account-pages">
+                        <div class="account-box">
+                            <div class="account-logo-box">
+                                <h2 class="text-uppercase text-center">
+                                    <a href="index.html" class="text-success">
+                                                <span>
+                                                    <img src="../../static/adminResources/images/logo1.png" height="50" width="50">
+                                                </span>
+                                    </a>
+                                </h2>
+
+                                <h5 class="text-uppercase font-bold m-b-5 m-t-50">Register</h5>
+
+                            </div>
+                            <div class="account-content">
+                                <form class="form-horizontal" action="/user/updateProfile" method="post">
+                                    {% for i in registerVOList %}
+                                        <input type="hidden" value="{{ i[0]['registerId'] }}" name="registerId">
+                                        <input type="hidden" name="loginId" value="{{ i[1]['loginId'] }}">
+                                    <div class="form-group row m-b-20">
+                                        <div class="col-12">
+                                            <label for="registerFirstName">First Name</label>
+                                            <input class="form-control" type="text" name="registerFirstName" value="{{ i[0]['registerFirstName'] }}" required=""
+                                                   placeholder="Enter Firstname">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row m-b-20">
+                                        <div class="col-12">
+                                            <label for="registerLastName">Last Name</label>
+                                            <input class="form-control" type="text" name="registerLastName" value="{{ i[0]['registerLastName'] }}" required=""
+                                                   placeholder="Enter Lastname">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <div>
+                                            <textarea required class="form-control" name="registerAddress">{{ i[0]['registerAddress'] }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row m-b-20">
+                                        <div class="col-12">
+                                            <label for="registerContact">Contact</label>
+                                            <input class="form-control" type="text" name="registerContact" value="{{ i[0]['registerContact'] }}" required=""
+                                                   placeholder="Enter Contact">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row m-b-20">
+                                        <div class="col-12">
+                                            <label for="registerUsername">Username</label>
+                                            <input class="form-control" type="email" name="loginUsername" value="{{ i[1]['loginUsername'] }}" required=""
+                                                   placeholder="Enter Username">
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+                                    <div class="form-group row text-center m-t-10">
+                                        <div class="col-12">
+                                            <button class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                    type="submit" value="SIGN UP">Submit
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+
+
+                            </div>
+                        </div>
+                        <!-- end card-box-->
+                    </div>
+
+
+                </div>
+                <!-- end wrapper -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END HOME -->
+
+
+<script>
+    var resizefunc = [];
+</script>
+
+<!-- jQuery  -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/metisMenu.min.js"></script>
+<script src="../../static/adminResources/js/waves.js"></script>
+<script src="../../static/adminResources/js/jquery.slimscroll.js"></script>
+
+<!-- App js -->
+<script src="../../static/adminResources/js/jquery.core.js"></script>
+<script src="../../static/adminResources/js/jquery.app.js"></script>
+
+</body>
+</html>

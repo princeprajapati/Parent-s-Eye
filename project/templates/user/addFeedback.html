@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Parent's Eye</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/metismenu.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/star%202.css" rel="stylesheet" type="text/css"/>
+
+
+    <script src="../../static/adminResources/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Top Bar Start -->
+
+    {% include 'user/header.html' %}
+
+    <!-- Top Bar End -->
+
+
+    <!-- ========== Left Sidebar Start ========== -->
+    {% include 'user/menu.html' %}
+
+    <!-- Left Sidebar End -->
+
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid"><br>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="card-box">
+                            <h4 class="header-title m-t-0">Post Feedback</h4>
+                            <!--<p class="text-muted font-14 m-b-20">-->
+                            <!--Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.-->
+                            <!--</p>-->
+
+                            <form action="/user/insertFeedback" enctype="multipart/form-data" method="post">
+
+                                <div class="form-group">
+                                    <label>Ratings:</label></br>
+                                    <div class="rate">
+                                        <input type="radio" id="star5" name="feedbackRating" value="5"/><label
+                                            for="star5"
+                                            title="text">5
+                                        stars</label>
+                                        <input type="radio" id="star4" name="feedbackRating" value="4"/><label
+                                            for="star4"
+                                            title="text">4
+                                        stars</label>
+                                        <input type="radio" id="star3" name="feedbackRating" value="3"/><label
+                                            for="star3"
+                                            title="text">3
+                                        stars</label>
+                                        <input type="radio" id="star2" name="feedbackRating" value="2"/><label
+                                            for="star2"
+                                            title="text">2
+                                        stars</label>
+                                        <input type="radio" id="star1" name="feedbackRating" value="1"/><label
+                                            for="star1"
+                                            title="text">1
+                                        star</label>
+                                    </div>
+                                </div><br><br>
+
+                                <div class="form-group">
+                                    <label>Feedback Subject:<span class="text-danger">*</span></label>
+                                    <input type="text" name="feedbackSubject" parsley-trigger="change" required
+                                           placeholder="Enter Subject" class="form-control" id="feedbackSubject">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Feedback Description:<span class="text-danger">*</span></label>
+                                    <div>
+                                        <textarea required class="form-control" name="feedbackDescription"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-right m-b-0">
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                        Submit
+                                    </button>
+
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-box -->
+                    </div>
+                    <!-- end col -->
+
+                </div>
+                <!-- end row -->
+
+
+                <!-- end row -->
+
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        {% include 'user/footer.html' %}
+
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+
+<!-- jQuery  -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/metisMenu.min.js"></script>
+<script src="../../static/adminResources/js/waves.js"></script>
+<script src="../../static/adminResources/js/jquery.slimscroll.js"></script>
+
+<!-- Parsley js -->
+<script type="text/javascript" src="../../static/adminResources/js/parsley.min.js"></script>
+
+<!-- App js -->
+<script src="../../static/adminResources/js/jquery.core.js"></script>
+<script src="../../static/adminResources/js/jquery.app.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').parsley();
+    });
+</script>
+
+</body>
+</html>
